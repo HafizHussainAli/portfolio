@@ -7,13 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#111111;--bg2:#1C1C1C;--card:#262626;--bd:#383838;--tx:#FFFFFF;--mut:#A3A3A3;--a:#F97316;--b:#FB923C;--c:#EA580C;--d:#FDBA74;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#0a110c;--bg2:#101a13;--card:#16231a;--bd:#24382a;--tx:#FFFFFF;--mut:#A3B8A8;--a:#22C55E;--b:#A3E635;--c:#10B981;--d:#BEF264;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 canvas#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-#glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.2),transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0;left:-999px;top:-999px}
+#glow{position:fixed;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.2),transparent 65%);transform:translate(-50%,-50%);pointer-events:none;z-index:0;left:-999px;top:-999px}
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:60}
 main,footer,header{position:relative;z-index:1}
 .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
@@ -24,7 +24,7 @@ nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
 nav ul a{color:var(--mut);font-size:.92rem;transition:.2s}nav ul a:hover{color:var(--tx)}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;border:1px solid var(--bd);background:var(--card);cursor:pointer;color:var(--tx);transition:.25s;font-family:inherit}
 .btn:hover{transform:translateY(-3px);border-color:var(--a)}
-.btn.p{background:linear-gradient(135deg,var(--a),var(--c));border:0;color:#fff;box-shadow:0 10px 30px -10px var(--a)}
+.btn.p{background:linear-gradient(135deg,var(--a),var(--c));border:0;color:#04210f;box-shadow:0 10px 30px -10px var(--a)}
 .ic{width:42px;padding:10px 0;justify-content:center}
 section{padding:96px 0}
 .hero{min-height:92vh;display:flex;align-items:center;padding-top:60px}
@@ -43,15 +43,15 @@ h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0 34px;letter-spacing:-.02em}
 .grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
 .card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:26px;backdrop-filter:blur(8px);transition:transform .15s,border-color .3s,box-shadow .3s;transform-style:preserve-3d;position:relative;overflow:hidden}
 .card:hover{border-color:var(--a);box-shadow:0 20px 50px -25px var(--a)}
-.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(249,115,22,.15),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),rgba(34,197,94,.15),transparent 60%);opacity:0;transition:.3s;pointer-events:none}
 .card:hover::after{opacity:1}
 .card h3{margin:0 0 8px;font-size:1.2rem}.card p{color:var(--mut);margin:0 0 14px;font-size:.95rem}
-.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font-family:"JetBrains Mono",monospace;font-size:.74rem;padding:4px 11px;border-radius:99px;background:rgba(249,115,22,.12);color:var(--d);border:1px solid var(--bd)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{font-family:"JetBrains Mono",monospace;font-size:.74rem;padding:4px 11px;border-radius:99px;background:rgba(34,197,94,.12);color:var(--d);border:1px solid var(--bd)}
 .links{display:flex;gap:16px;margin-top:16px;font-size:.9rem;font-weight:600;color:var(--b)}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}.filters .btn{padding:8px 18px;font-size:.85rem}.filters .btn.on{background:var(--a);color:#fff;border-color:var(--a)}
-.term{background:#0d0d0d;border:1px solid var(--bd);border-radius:16px;overflow:hidden;font-family:"JetBrains Mono",monospace;font-size:.85rem;color:#d4d4d4}
-.term i{display:flex;gap:7px;padding:12px 14px;background:#1C1C1C}.term i s{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term i s:nth-child(2){background:#febc2e}.term i s:nth-child(3){background:#28c840}
-.term pre{margin:0;padding:18px;overflow-x:auto}.k{color:#FB923C}.f{color:#FDBA74}.s{color:#A3A3A3}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}.filters .btn{padding:8px 18px;font-size:.85rem}.filters .btn.on{background:var(--a);color:#04210f;border-color:var(--a)}
+.term{background:#08100a;border:1px solid var(--bd);border-radius:16px;overflow:hidden;font-family:"JetBrains Mono",monospace;font-size:.85rem;color:#d4d4d4}
+.term i{display:flex;gap:7px;padding:12px 14px;background:#101a13}.term i s{width:11px;height:11px;border-radius:50%;background:#ff5f57}.term i s:nth-child(2){background:#febc2e}.term i s:nth-child(3){background:#28c840}
+.term pre{margin:0;padding:18px;overflow-x:auto}.k{color:#A3E635}.f{color:#86efac}.s{color:#A3B8A8}
 .photo{position:relative;width:240px;height:240px;margin:0 auto 30px;padding:6px;border-radius:18px;background:linear-gradient(135deg,var(--a),var(--b),var(--c));box-shadow:0 25px 60px -25px var(--a);animation:float 5s ease-in-out infinite}
 .photo::before{content:"";position:absolute;inset:0;border:2px solid var(--b);border-radius:18px;transform:translate(14px,14px);z-index:-1;opacity:.6}
 .photo img,.photo span{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);border-radius:12px;object-fit:cover;background:var(--bg2)}
@@ -63,11 +63,11 @@ h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0 34px;letter-spacing:-.02em}
 @media(max-width:800px){.hero-g{grid-template-columns:1fr}.hero-g>.rv{order:-1}}
 .about{display:grid;gap:40px;grid-template-columns:1.1fr 1fr;align-items:center}
 @media(max-width:800px){nav ul{display:none}.about{grid-template-columns:1fr}}
-.tl{border-left:2px solid var(--bd);margin-left:8px;padding-left:28px}.tl div{position:relative;margin-bottom:26px}.tl div::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px rgba(249,115,22,.2)}
+.tl{border-left:2px solid var(--bd);margin-left:8px;padding-left:28px}.tl div{position:relative;margin-bottom:26px}.tl div::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px rgba(34,197,94,.2)}
 .tl b{display:block}.tl span{color:var(--mut);font-size:.93rem}
 .note{font-size:.82rem;color:var(--mut);border-left:3px solid var(--c);padding-left:12px;margin-top:16px}
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
-.rw{padding:34px;border-color:var(--a);box-shadow:0 30px 80px -40px var(--a);background:linear-gradient(135deg,rgba(249,115,22,.12),var(--card) 55%)}.rw-h{display:flex;gap:18px;align-items:center;margin-bottom:18px;flex-wrap:wrap}.logo-box{position:relative;width:64px;height:64px;flex:none}.logo-box svg,.logo-box img{position:absolute;inset:0;width:100%;height:100%;border-radius:14px}.logo-box img{object-fit:contain;background:var(--card);padding:4px}.rw-h h3{font-size:1.9rem;margin:0 0 6px}.team-g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:20px 0}.team-g div{border:1px solid var(--bd);border-radius:12px;padding:14px;background:var(--bg2)}.team-g b{display:block}.team-g span{color:var(--mut);font-size:.85rem}.team-g .me{border-color:var(--a)}
+.rw{padding:34px;border-color:var(--a);box-shadow:0 30px 80px -40px var(--a);background:linear-gradient(135deg,rgba(34,197,94,.12),var(--card) 55%)}.rw-h{display:flex;gap:18px;align-items:center;margin-bottom:18px;flex-wrap:wrap}.logo-box{position:relative;width:64px;height:64px;flex:none}.logo-box svg,.logo-box img{position:absolute;inset:0;width:100%;height:100%;border-radius:14px}.logo-box img{object-fit:contain;background:var(--card);padding:4px}.rw-h h3{font-size:1.9rem;margin:0 0 6px}.team-g{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:20px 0}.team-g div{border:1px solid var(--bd);border-radius:12px;padding:14px;background:var(--bg2)}.team-g b{display:block}.team-g span{color:var(--mut);font-size:.85rem}.team-g .me{border-color:var(--a)}
 footer a{color:var(--b);font-weight:600}
 footer{padding:40px 0;border-top:1px solid var(--bd);color:var(--mut);text-align:center;font-size:.88rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -95,14 +95,14 @@ footer{padding:40px 0;border-top:1px solid var(--bd);color:var(--mut);text-align
 <div class="rv"><div class="sec-h">// about</div><h2>More than just writing code.</h2>
 <p style="color:var(--mut)">I enjoy understanding how software really works and turning ideas into working applications. I started with a school management system in Python, then moved to database-backed apps with PostgreSQL and web portals with FastAPI.</p>
 <p style="color:var(--mut)">I learn by building: every project teaches me something about structure, data and users. Today I work as a full-stack developer, and I’m part of the RumiWare software team.</p></div>
-<div class="rv"><div class="photo"><span>HA</span><img src="hussain.jpg" alt="Portrait of Hussain Ali" onerror="this.remove()"></div><div class="term"><i><s></s><s></s><s></s></i><pre><span class="k">const</span> hussain = {
+<div class="term rv"><i><s></s><s></s><s></s></i><pre><span class="k">const</span> hussain = {
   role: <span class="s">"Full-Stack Developer"</span>,
   location: <span class="s">"Lahore, Pakistan"</span>,
   stack: [<span class="s">"Python"</span>, <span class="s">"FastAPI"</span>,
           <span class="s">"PostgreSQL"</span>, <span class="s">"JavaScript"</span>],
   team: <span class="s">"RumiWare"</span>,
   <span class="f">learnsBy</span>() { <span class="k">return</span> <span class="s">"building"</span>; }
-};</pre></div></div></div></section>
+};</pre></div></div></section>
 
 <section id="skills"><div class="wrap"><div class="sec-h rv">// skills</div><h2 class="rv">Tools I build with.</h2>
 <div class="grid g3">
@@ -133,7 +133,7 @@ footer{padding:40px 0;border-top:1px solid var(--bd);color:var(--mut);text-align
 </div></div></section>
 
 <section id="team"><div class="wrap"><div class="sec-h rv">// team</div><h2 class="rv">Where I work: <span class="grad">Rumiware</span></h2>
-<div class="card rv rw"><div class="rw-h"><div class="logo-box"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F97316"/><stop offset="1" stop-color="#EA580C"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#rg)"/><path fill-rule="evenodd" fill="#fff" d="M16 36V12h10a8 8 0 0 1 2.4 15.6L34 36h-5l-5.2-7.4H20.5V36zM20.5 16v8.2H26a4.1 4.1 0 0 0 0-8.2z"/></svg><img src="rumiware-logo.png" alt="Rumiware logo" onerror="this.remove()"></div><div><h3>Rumiware</h3><span class="tag">Software house · Lahore, Pakistan</span></div></div>
+<div class="card rv rw"><div class="rw-h"><div class="logo-box"><svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22C55E"/><stop offset="1" stop-color="#10B981"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#rg)"/><path fill-rule="evenodd" fill="#fff" d="M16 36V12h10a8 8 0 0 1 2.4 15.6L34 36h-5l-5.2-7.4H20.5V36zM20.5 16v8.2H26a4.1 4.1 0 0 0 0-8.2z"/></svg><img src="rumiware-logo.png" alt="Rumiware logo" onerror="this.remove()"></div><div><h3>Rumiware</h3><span class="tag">Software house · Lahore, Pakistan</span></div></div>
 <p>I work at Rumiware, a small software house in Lahore that builds websites, mobile apps, full-stack products and AI automation for growing businesses. My role there is frontend and full-stack developer.</p>
 <div class="team-g"><div><b>Salman Ali Aqdas</b><span>CEO &amp; Founder</span></div><div><b>Aamir Ashraf</b><span>Data Scientist &amp; CTO</span></div><div><b>Hassan</b><span>Python &amp; full-stack developer</span></div><div class="me"><b>Hussain Ali (me)</b><span>Frontend &amp; full-stack developer</span></div></div>
 <div class="cta"><a class="btn p" href="https://rumiware.com/" target="_blank" rel="noopener">Visit rumiware.com ↗</a><a class="btn" href="https://rumiware.com/get-quote/" target="_blank" rel="noopener">Request a consultation</a><a class="btn" href="https://github.com/Rumi-Ware" target="_blank" rel="noopener">Rumiware on GitHub</a></div>
