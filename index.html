@@ -66,7 +66,12 @@ h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0 34px;letter-spacing:-.02em}
 .term pre{margin:0;padding:18px;overflow-x:auto}.k{color:#9CCB6B}.f{color:#B7D9A0}.s{color:#9FB1A7}
 .photo{position:relative;width:240px;height:240px;margin:0 auto 30px;padding:6px;border-radius:18px;background:linear-gradient(135deg,var(--a),var(--b),var(--c));box-shadow:0 25px 60px -25px var(--a);animation:float 5s ease-in-out infinite}
 .photo::before{content:"";position:absolute;inset:0;border:2px solid var(--b);border-radius:18px;transform:translate(14px,14px);z-index:-1;opacity:.6}
-.photo img,.photo span{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);border-radius:12px;object-fit:cover;background:var(--bg2)}
+.photo img,.photo span{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);border-radius:12px;object-fit:cover;background:transparent}
+.pbg{position:absolute;inset:6px;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,var(--bg2),var(--card))}
+.pbg::before,.pbg::after{content:"";position:absolute;width:75%;height:75%;border-radius:50%;filter:blur(36px);opacity:.8;animation:blob 9s ease-in-out infinite alternate}
+.pbg::before{background:var(--a);left:-18%;top:-12%}
+.pbg::after{background:var(--b);right:-22%;bottom:-16%;opacity:.55;animation-delay:-4.5s}
+@keyframes blob{to{transform:translate(32%,26%) scale(1.3)}}
 .photo span{display:flex;align-items:center;justify-content:center;font-size:3.4rem;font-weight:800;color:var(--b)}
 .photo img{z-index:1;object-position:center 15%}
 @keyframes float{50%{transform:translateY(-10px)}}
@@ -118,7 +123,7 @@ footer{padding:40px 0;border-top:1px solid var(--bd);color:var(--mut);text-align
 <div class="cta"><a class="btn p" href="#projects">View my projects →</a><a class="btn" href="https://github.com/HafizHussainAli" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.linkedin.com/in/hafiz-hussain-ali/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="#contact">Contact me</a></div>
 <div class="stats"><div><b data-n="2">0</b><span>Public repositories</span></div><div><b data-n="4">0</b><span>Person team, RumiWare</span></div><div><b data-n="3">0</b><span>Layers: DB · API · UI</span></div></div>
 </div>
-<div class="rv"><div class="halo"><i></i><i></i><i></i></div><div class="photo"><span>HA</span><img src="hussain.png" alt="Portrait of Hussain Ali" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='hussain.jpg'}else{this.remove()}"></div></div>
+<div class="rv"><div class="photo"><div class="pbg"></div><span>HA</span><img src="hussain.png" alt="Portrait of Hussain Ali" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='hussain.jpg'}else{this.remove()}"></div></div>
 </div></section>
 
 <section id="about"><div class="wrap about">
