@@ -71,12 +71,21 @@ h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0 34px;letter-spacing:-.02em}
 .photo img{z-index:1;object-position:center 15%}
 @keyframes float{50%{transform:translateY(-10px)}}
 .hero-g{display:grid;gap:50px;grid-template-columns:1.3fr 1fr;align-items:center}
+.hero-g>.rv{position:relative;--ps:min(420px,80vw);--pt:-90px}
+.halo{position:absolute;left:50%;top:calc(var(--ps)/2 + var(--pt));width:calc(var(--ps)*1.38);height:calc(var(--ps)*1.38);transform:translate(-50%,-50%);z-index:-1;pointer-events:none}
+.halo i{position:absolute;border-radius:50%}
+.halo i:nth-child(1){inset:10%;background:radial-gradient(circle,var(--a),transparent 68%);opacity:.4;filter:blur(30px);animation:pulse 4.5s ease-in-out infinite}
+.halo i:nth-child(2){inset:0;border:1.5px dashed var(--b);opacity:.5;animation:orbit 32s linear infinite}
+.halo i:nth-child(3){inset:11%;border:1px solid var(--a);opacity:.4;animation:orbit 20s linear infinite reverse}
+.halo i:nth-child(n+2)::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--b);box-shadow:0 0 16px var(--b)}
+.halo i:nth-child(3)::after{top:auto;bottom:-5px;background:var(--a);box-shadow:0 0 14px var(--a)}
+@keyframes orbit{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(1.14);opacity:.62}}
 .hero-g .photo{width:min(420px,80vw);height:min(420px,80vw);top:-90px}
 .ltr span{display:inline-block;color:color-mix(in srgb,var(--b) calc(var(--i)*8%),var(--a));transition:transform .3s cubic-bezier(.3,1.6,.5,1),color .3s,text-shadow .3s;cursor:default}
 .ltr span:hover{transform:translateY(-10px) scale(1.45);color:var(--d);text-shadow:0 0 26px var(--a)}
 .ltr span:nth-child(even):hover{color:#fff}
 .bigname{font-size:clamp(2.6rem,9vw,6.5rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:8px}
-@media(max-width:800px){.hero-g{grid-template-columns:1fr}.hero-g>.rv{order:-1}.hero-g .photo{top:0}}
+@media(max-width:800px){.hero-g{grid-template-columns:1fr}.hero-g>.rv{order:-1;--pt:0px}.hero-g .photo{top:0}}
 .about{display:grid;gap:40px;grid-template-columns:1.1fr 1fr;align-items:center}
 @media(max-width:800px){nav ul{display:none}.about{grid-template-columns:1fr}}
 .tl{border-left:2px solid var(--bd);margin-left:8px;padding-left:28px}.tl div{position:relative;margin-bottom:26px}.tl div::before{content:"";position:absolute;left:-37px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px rgba(63,169,122,.2)}
@@ -109,7 +118,7 @@ footer{padding:40px 0;border-top:1px solid var(--bd);color:var(--mut);text-align
 <div class="cta"><a class="btn p" href="#projects">View my projects →</a><a class="btn" href="https://github.com/HafizHussainAli" target="_blank" rel="noopener">GitHub</a><a class="btn" href="https://www.linkedin.com/in/hafiz-hussain-ali/" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="#contact">Contact me</a></div>
 <div class="stats"><div><b data-n="2">0</b><span>Public repositories</span></div><div><b data-n="4">0</b><span>Person team, RumiWare</span></div><div><b data-n="3">0</b><span>Layers: DB · API · UI</span></div></div>
 </div>
-<div class="rv"><div class="photo"><span>HA</span><img src="hussain.png" alt="Portrait of Hussain Ali" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='hussain.jpg'}else{this.remove()}"></div></div>
+<div class="rv"><div class="halo"><i></i><i></i><i></i></div><div class="photo"><span>HA</span><img src="hussain.png" alt="Portrait of Hussain Ali" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='hussain.jpg'}else{this.remove()}"></div></div>
 </div></section>
 
 <section id="about"><div class="wrap about">
